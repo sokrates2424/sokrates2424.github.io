@@ -5,6 +5,9 @@ let currentRoundNumber = 1;
 const generateTarget = () => Math.floor(Math.random() * 10)
 
 const compareGuesses = (humanGuess,computerGuess,targetNum) => {
+    if (humanGuess > 9 || humanGuess < 0) {
+        alert('Your number is out of the specified range! Please reload the page and try again!')
+    }                
     if(Math.abs(targetNum - humanGuess) <= Math.abs(targetNum - computerGuess)) {
             return true
     } else if(Math.abs(targetNum - humanGuess) > Math.abs(targetNum - computerGuess)) {
@@ -27,6 +30,3 @@ function updateScore(roundWinner) {
 function advanceRound() {
     currentRoundNumber ++
 }
-
-
-
